@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,7 @@
         crossorigin="anonymous"></script>
 
     <script type="text/javascript" src="../js/script.js"></script>
-    <script type="text/javascript"  src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
 
 </head>
 
@@ -19,9 +20,53 @@
     <div class="container">
         <h1>Clase 05</h1>
         <h2>Incorporar objetos</h2>
-        <h3>Definir perfil de vendedor según zona.</h3>
-        <p>Se debe indicar algunos parámetros para poder definir el perfil de vendedor. El perfil se define en base a la zona y se emite la comisión porcentual que cobrará</p>
-            <button onclick="iniciar()">INICIEMOS</button>
+        <h3>Definir perfil de vendedor según zona y seniority.</h3>
+        <p>Se debe indicar algunos parámetros para poder definir el perfil de vendedor. El perfil se define en base a la
+            zona y al seniority y se emite la comisión que cobrará en $.</p>
+        <div class="row">
+            <div class="col-6">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Región</th>
+                            <th scope="col">Comisión %</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">0</th>
+                            <td>15%</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>20%</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>30%</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>40%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-6 d-flex align-items-center">
+                <p class="lead">En caso de que el vendedor sea Senior la comisión se incrementará en 10%, de lo contrario se considera como Junior y cobrará según la tabla.</p>
+            </div>
+        </div>
+
+
+        <div class="col-6">
+            
+        </div>
+        <div class="col-6">
+            
+        </div>
+
+
+        <button onclick="iniciar()">INICIEMOS</button>
 
     </div>
 
