@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 06 - INCORPORAR ARRAYS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="../js/script.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Clase 06</h1>
+        <h2>Incorporar arrays</h2>
+        <h3>Cálculo de comisiones de 30 empleados.</h3>
+        <p>Se tienen 30 empleados con nombres ficticios creados al azar. Se le asinga una región al azar según la tabla
+            de abajo. También se le asigna un monto anual ficticio al azar de ventas. <span>El algoritmo pasa todo a arrays, calcula las
+            comisiones para cada empleado y muestra en pantalla el total a abonar por la empresa.</span> Los valores parciales son mostrados en consola.</p>
+        <div class="row">
+            <div class="col-6">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Región</th>
+                            <th scope="col">Comisión %</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">0</th>
+                            <td>15%</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>20%</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>30%</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>40%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-6 d-flex align-items-center">
+                <p class="lead">La empresa debe abonar en concepto de comisiones $</p>
+                <p class="lead" id="lbresultado"></p>
+            </div>
+        </div>
+
+
+        <div class="col-6">
+
+        </div>
+        <div class="col-6">
+
+        </div>
+
+
+        <button onclick="iniciar()">INICIEMOS</button>
+
+    </div>
+
+</body>
+
+</html>
