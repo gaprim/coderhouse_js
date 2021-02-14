@@ -126,27 +126,39 @@
         })
     }
 
-    leerLocalStorageCompra() {
-        var productosLS
-        productosLS = this.obtenerProductosLocalStorage()
-        productosLS.forEach(function (producto) {
-            var row = document.createElement('tr')
+    leerLocalStorageCompra(){
+        let productosLS;
+        productosLS = this.obtenerProductosLocalStorage();
+        productosLS.forEach(function (producto){
+            const row = document.createElement('tr');
             row.innerHTML = `
-            <td> 
-                <img src="${producto.imagen}" width = 100 
-            </td> 
-            <td> ${producto.titulo}</td>   
-            <td> ${producto.precio}</td>
-            <td> 
-                <input type = "number" class ="form-control cantidad" min = "1" disabled value=${producto.cantidad}>
-            </td>
-            <td>${producto.precio * producto.cantidad}</td>
-            <td> 
-                <a href="#" class = "borrar-producto fas fa-times-circle text-decoration-none text-danger" style="font-size:20px" data-id="${producto.id}"></a>
-            </td>    
-            `
-            listaCompra.appendChild(row)
-        })
+                <td>
+                    <img src="${producto.imagen}" width=100>
+                </td>
+                <td>${producto.titulo}</td>
+                <td>${producto.precio}</td>
+                <td>
+                    <input type="number" class="form-control cantidad" min="1" value=${producto.cantidad}>
+                </td>
+                <td id='subtotales'>${producto.precio * producto.cantidad}</td>
+                <td>
+                    <a href="#" class="borrar-producto fas fa-times-circle text-decoration-none text-danger" style="font-size:20px " data-id="${producto.id}"></a>
+                </td>
+            `;
+            listaCompra.appendChild(row);
+        });
+    }
+
+    eliminarProductoLocalStorage(productoID) {
+        let productosLS;
+        productosLS = this.obtenerProductosLocalStorage();
+        productosLS.forEach(function (productoLS, index) {
+            if (productoLS.id === productoID) {
+                productosLS.splice(index, 1);
+            }
+        });
+
+        localStorage.setItem('productos', JSON.stringify(productosLS));
     }
 
     vaciarLocalStorage() {
@@ -183,10 +195,37 @@
         total = parseFloat(subtotal) + parseFloat(iva)
         document.getElementById('subtotal').innerHTML = "$ " + subtotal.toFixed(2)
         document.getElementById('iva').innerHTML = "$ " + iva
-        document.getElementById('total').innerHTML = "$ " + total.toFixed(2)
+        //document.getElementById('total').innerHTML = "$ " + total.toFixed(2)
+        document.getElementById('total').value = "$ " + total.toFixed(2)
 
 
     }
+
+
+    obtenerEvento(e) {
+        e.preventDefault();
+        let id, cantidad, producto, productosLS;
+        if (e.target.classList.contains('cantidad')) {
+            producto = e.target.parentElement.parentElement;
+            id = producto.querySelector('a').getAttribute('data-id');
+            cantidad = producto.querySelector('input').value;
+            let actualizarMontos = document.querySelectorAll('#subtotales');
+            productosLS = this.obtenerProductosLocalStorage();
+            productosLS.forEach(function (productoLS, index) {
+                if (productoLS.id === id) {
+                    productoLS.cantidad = cantidad;
+                    actualizarMontos[index].innerHTML = Number(cantidad * productosLS[index].precio);
+                }
+            });
+            localStorage.setItem('productos', JSON.stringify(productosLS));
+
+        }
+        else {
+            console.log("click afuera");
+        }
+    }
+
+
 
 }
 

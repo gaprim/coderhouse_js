@@ -17,6 +17,8 @@ function cargarEventos(){
     carrito.addEventListener('click', (e)=>{compra.eliminarProducto(e)})
     compra.calcularTotal()
     procesarCompraBtn.addEventListener('click',procesarCompra)
+    carrito.addEventListener('change', (e) => { compra.obtenerEvento(e) });
+    carrito.addEventListener('keyup', (e) => { compra.obtenerEvento(e) });
     
 }
 
