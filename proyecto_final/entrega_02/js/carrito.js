@@ -119,7 +119,7 @@
             <td> ${producto.titulo}</td>   
             <td> ${producto.precio}</td>
             <td> 
-                <a href="#" class = "borrar-producto fas fa-times-circle" data-id="${producto.id}"></a>
+                <a href="#" class = "borrar-producto fas fa-times-circle text-decoration-none text-danger" data-id="${producto.id}"></a>
             </td>    
             `
             listaProductos.appendChild(row)
@@ -138,11 +138,11 @@
             <td> ${producto.titulo}</td>   
             <td> ${producto.precio}</td>
             <td> 
-                <input type = "number" class ="form-control cantidad" min = "1" value=${producto.cantidad}>
+                <input type = "number" class ="form-control cantidad" min = "1" disabled value=${producto.cantidad}>
             </td>
             <td>${producto.precio * producto.cantidad}</td>
             <td> 
-                <a href="#" class = "borrar-producto fas fa-times-circle" style="font-size:20px" data-id="${producto.id}"></a>
+                <a href="#" class = "borrar-producto fas fa-times-circle text-decoration-none text-danger" style="font-size:20px" data-id="${producto.id}"></a>
             </td>    
             `
             listaCompra.appendChild(row)
