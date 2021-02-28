@@ -1,0 +1,25 @@
+var carro = new Carrito()
+//var carrito = document.getElementById('carrito')
+var carrito = $("#carrito")
+//var productos = document.getElementById('lista-productos')
+var productos = $("#lista-productos")
+var listaProductos = document.querySelector('#lista-carrito tbody')
+//var vaciarCarritoBtn = document.getElementById('vaciar-carrito')
+var vaciarCarritoBtn = $("#vaciar-carrito")
+//var procesarPedidoBtn = document.getElementById('procesar-pedido')
+var procesarPedidoBtn = $("#procesar-pedido")
+
+$(document).ready(cargarEventos())
+
+function cargarEventos(){
+    //productos.addEventListener('click',(e)=>{carro.comprarProducto(e)})
+    productos.click((e)=>{carro.comprarProducto(e)})
+    //carrito.addEventListener('click',(e)=>{carro.eliminarProducto(e)})
+    carrito.click((e)=>{carro.eliminarProducto(e)})
+    //vaciarCarritoBtn.addEventListener('click',(e)=>{carro.vaciarCarrito(e)})
+    vaciarCarritoBtn.click((e)=>{carro.vaciarCarrito(e)})
+    //document.addEventListener('DOMContentLoaded', carro.leerLocalStorage())
+    $(document).ready(carro.leerLocalStorage())
+    //procesarPedidoBtn.addEventListener('click',(e)=>{carro.procesarPedido(e)})
+    procesarPedidoBtn.click((e)=>{carro.procesarPedido(e)})
+}
