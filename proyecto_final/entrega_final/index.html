@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <script src="js/popper.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+
+    <title>Entrega proyecto final - Carrito de compras</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="row align-items-stretch justify-content-between">
+                <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+                    <a class="navbar-brand" href="#">ENTREGA PROYECTO FINAL</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item dropdown">
+                                <img src="img/cart.png" class="nav-link dropdown-toggle img-fluid" height="70px"
+                                    width="70px" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false"></img>
+                                <div id="carrito" class="dropdown-menu" aria-labelledby="navbarCollapse">
+                                    <table id="lista-carrito" class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Imagen</th>
+                                                <th>Nombre</th>
+                                                <th>Precio</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+
+                                    <a href="#" id="vaciar-carrito" class="btn btn-danger btn-block">Vaciar Carrito</a>
+                                    <a href="#" id="procesar-pedido" class="btn btn-success btn-block">Procesar
+                                        Compra</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 my-4 mx-auto text-center">
+            <h1 class="display-4 mt-4">Lista de Productos</h1>
+            <p class="lead">Selecciona la fotografía que deseas comprar.</p>
+        </div>
+
+        <div class="container" id="lista-productos">
+
+            <div class="card-deck mb-3 text-center">
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">DÍA EN DOLOMITES</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/Artboard_1.png" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">4890</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Acabado mate</li>
+                            <li>Papel parafinado</li>
+                            <li>150cm x 98cm </li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="1">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">MONTAÑA ABSTRACTA </h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/Artboard_2.png" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">3670</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Acabado brillante</li>
+                            <li>Papel texturado</li>
+                            <li>200cm x 123cm</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="2">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">PLAYA</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/Artboard_3.png" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">4100</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Acabado mate</li>
+                            <li>Papel entelado</li>
+                            <li>80cm x 43cm</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="3">Comprar</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-deck mb-3 text-center">
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">INVIERNO ALPINO</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/Artboard_4.png" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">6100</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Acabado mate</li>
+                            <li>Papel acrilico</li>
+                            <li>300cm x 165cm</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="4">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">ALPES JULIANOS</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/Artboard_5.png" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">5893</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Acabado mate</li>
+                            <li>Papel texturado</li>
+                            <li>100cm x 53cm</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="5">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">FLORES BUA-TONG</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/Artboard_6.png" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">3220</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Acabado brillante</li>
+                            <li>Papel acrílico</li>
+                            <li>130cm x 86cm</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="6">Comprar</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-deck mb-3 text-center">
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">BAHIA ROCOSA</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/Artboard_7.png" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">4990</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Acabado mate</li>
+                            <li>Papel texturado</li>
+                            <li>200cm x 200cm</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="7">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">AGUA TURQUESA</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/Artboard_8.png" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">2100</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Acabado brillante</li>
+                            <li>Papel entelado</li>
+                            <li>90cm x 60cm</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="8">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-bold">ATARDECER EN EL MAR</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="img/Artboard_9.png" class="card-img-top">
+                        <h1 class="card-title pricing-card-title precio">$ <span class="">5690</span></h1>
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li></li>
+                            <li>Acabado brillante</li>
+                            <li>Papel acrilico</li>
+                            <li>260cm x 163cm</li>
+                        </ul>
+                        <a href="" class="btn btn-block btn-primary agregar-carrito" data-id="9">Comprar</a>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="container-fluid bg-primary">
+            <div class="container pt-5 pb-5">
+                <h2 class="display-4 text-white text-center">Instantáneas de Argentina</h2>
+                <p class="lead text-center text-white">Un pequeño paseo en imágenes aleatorias por nuestro país tomadas por fotógrafos amateur de todo el mundo.</p>
+                <div class="imageDisplayWrapper text-center mt-5">
+                    <img class="imageToDisplay img-fluid p-5">
+                    <h5 class="text-white" id="img_description"></h5>
+                    <h6 class="text-white" id="img_alt_description"></h6>
+                    <h6 class="text-white" id="img_author"></h6>
+                    <h6 class="text-white">Fuente: Unplash.com</h6>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/sweetalert2.min.js"></script>
+    <script src="js/imageapi.js"></script>
+    <script src="js/jqueryanimate.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/pedido.js"></script>
+
+</body>
+
+</html>
